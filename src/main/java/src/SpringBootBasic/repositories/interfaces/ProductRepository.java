@@ -1,10 +1,10 @@
-package src.SpringBootBasic.services.interfaces;
-
-import java.util.List;
+package src.SpringBootBasic.repositories.interfaces;
 
 import src.SpringBootBasic.entities.ProductEntity;
 
-public interface IProductService {
+import java.util.List;
+
+public interface ProductRepository {
   ProductEntity createProduct(ProductEntity product);
   List<ProductEntity> getAllProducts();
 }

@@ -1,19 +1,20 @@
 package src.SpringBootBasic.services;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import src.SpringBootBasic.entities.ProductEntity;
-import src.SpringBootBasic.repositories.interfaces.IProductRepository;
-import src.SpringBootBasic.services.interfaces.IProductService;
+import src.SpringBootBasic.repositories.interfaces.ProductRepository;
+import src.SpringBootBasic.services.interfaces.ProductService;
+
+import java.util.List;
 
 @Service
-public class ProductService implements IProductService {
+public class ProductServiceImpl implements ProductService {
+
   @Autowired
-  private  IProductRepository productRepository;
-  
+  private ProductRepository productRepository;
+
   @Override
   public ProductEntity createProduct(ProductEntity product) {
     return productRepository.createProduct(product);

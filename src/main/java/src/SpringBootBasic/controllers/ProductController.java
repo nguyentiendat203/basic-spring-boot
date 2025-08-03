@@ -1,16 +1,14 @@
 package src.SpringBootBasic.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import src.SpringBootBasic.entities.ProductEntity;
-import src.SpringBootBasic.services.interfaces.IProductService;
+import src.SpringBootBasic.services.interfaces.ProductService;
 
+import java.util.List;
 
 
 @RestController
@@ -18,7 +16,7 @@ import src.SpringBootBasic.services.interfaces.IProductService;
 public class ProductController {
 
   @Autowired
-  private IProductService productService;
+  private ProductService productService;
 
   @PostMapping("/product")
   public ProductEntity createProduct(ProductEntity product) {

@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import src.SpringBootBasic.entities.ProductEntity;
-import src.SpringBootBasic.repositories.interfaces.IProductRepository;
+import src.SpringBootBasic.repositories.interfaces.ProductRepository;
 
 @Repository
-public class ProductRepository implements IProductRepository {
+public class ProductRepositoryImpl implements ProductRepository {
   
   @Override
   public ProductEntity createProduct(ProductEntity product) {
