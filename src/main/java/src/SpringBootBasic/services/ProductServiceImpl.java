@@ -1,13 +1,13 @@
 package src.SpringBootBasic.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import src.SpringBootBasic.entities.ProductEntity;
 import src.SpringBootBasic.repositories.interfaces.ProductRepository;
 import src.SpringBootBasic.services.interfaces.ProductService;
-
-import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -17,12 +17,12 @@ public class ProductServiceImpl implements ProductService {
 
   @Override
   public ProductEntity createProduct(ProductEntity product) {
-    return productRepository.createProduct(product);
+    return productRepository.save(product);
   }
 
   @Override
   public List<ProductEntity> getAllProducts() {
-    return productRepository.getAllProducts();
+    return productRepository.findAll();
   }
 
 }

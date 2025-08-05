@@ -1,10 +1,7 @@
 package src.SpringBootBasic.repositories.interfaces;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import src.SpringBootBasic.entities.ProductEntity;
 
-import java.util.List;
-
-public interface ProductRepository {
-  ProductEntity createProduct(ProductEntity product);
-  List<ProductEntity> getAllProducts();
-}
+public interface ProductRepository extends JpaRepository<ProductEntity, Integer>  {}
