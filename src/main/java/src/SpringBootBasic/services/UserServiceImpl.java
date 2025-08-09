@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import src.SpringBootBasic.entities.UserEntity;
-import src.SpringBootBasic.repositories.interfaces.UserRepository;
+import src.SpringBootBasic.repositories.UserRepository;
 import src.SpringBootBasic.services.interfaces.UserService;
 
 @Service

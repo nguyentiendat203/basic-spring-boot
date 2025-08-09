@@ -3,11 +3,13 @@ package src.SpringBootBasic.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import src.SpringBootBasic.dto.request.ProductDTO;
 import src.SpringBootBasic.entities.ProductEntity;
-import src.SpringBootBasic.repositories.interfaces.ProductRepository;
+import src.SpringBootBasic.repositories.ProductRepository;
 import src.SpringBootBasic.services.interfaces.ProductService;
 
 @Service
@@ -22,8 +24,8 @@ public class ProductServiceImpl implements ProductService {
   }
 
   @Override
-  public List<ProductEntity> getAllProducts() {
-    return productRepository.findAll();
+  public Page<ProductEntity> getAllProducts(Pageable pageable) {
+    return productRepository.findAll(pageable);
   }
 
   @Override

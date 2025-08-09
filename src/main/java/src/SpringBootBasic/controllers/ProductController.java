@@ -3,6 +3,10 @@ package src.SpringBootBasic.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,8 +35,15 @@ public class ProductController {
   }
 
   @GetMapping("/all")
-  public List<ProductEntity> getAllProducts() {
-    return productService.getAllProducts();
+  public Page<ProductEntity> getAllProducts(
+    @RequestParam(defaultValue = "0") int page,
+    @RequestParam(defaultValue = "10") int size,
+    @RequestParam(defaultValue = "id") String sortBy,
+    @RequestParam(defaultValue = "true") boolean ascending
+  ) {
+    Sort sort = ascending ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+    Pageable pageable = PageRequest.of(page, size, sort);
+    return productService.getAllProducts(pageable);
   }
 
   @GetMapping("")

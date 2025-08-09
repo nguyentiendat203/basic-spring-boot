@@ -1,4 +1,4 @@
-package src.SpringBootBasic.repositories.interfaces;
+package src.SpringBootBasic.repositories;
 
 import java.util.List;
 

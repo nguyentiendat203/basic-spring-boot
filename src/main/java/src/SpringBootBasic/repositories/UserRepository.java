@@ -1,4 +1,4 @@
-package src.SpringBootBasic.repositories.interfaces;
+package src.SpringBootBasic.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import src.SpringBootBasic.entities.UserEntity;
